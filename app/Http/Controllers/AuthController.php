@@ -11,48 +11,37 @@ class AuthController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    /**
-     * @OA\Post(
-     *      path="/login",
-     *      operationId="storeLogin",
+    
+     /**
+    * @OA\Post(
+    *     path="/login",
      *      tags={"Auth"},
-     *      summary="Autenticação de usuário",
-     *      description="Returns project data",
-     *      @OA\RequestBody(
-     *         @OA\MediaType(
-     *             mediaType="application/json",
-     *             @OA\Schema(
-     *                 @OA\Property(
-     *                     property="email",
-     *                     type="string"
-     *                 ),
-     *                 @OA\Property(
-     *                     property="password",
-     * *                     type="string"
-     *                 ),
-     *                 example={"email": "admin@admin.com", "password": "@Banco13032023"}
-     *             )
-     *         )
+    *     @OA\Parameter(
+     *          name="email",
+     *          description="Email Field",
+     *          required=true,
+     *          in="query",
+     *          @OA\Schema(
+     *              type="string"
+     *          )
      *     ),
-     *      @OA\Response(
-     *          response=201,
-     *          description="Successful operation",
-     *          
-     *       ),
-     *      @OA\Response(
-     *          response=400,
-     *          description="Bad Request"
-     *      ),
-     *      @OA\Response(
-     *          response=401,
-     *          description="Unauthenticated",
-     *      ),
-     *      @OA\Response(
-     *          response=403,
-     *          description="Forbidden"
-     *      )
-     * )
-     */
+     *     @OA\Parameter(
+     *          name="password",
+     *          description="Password",
+     *          required=true,
+     *          in="query",
+     *          @OA\Schema(
+     *              type="string"
+     *          )
+     *     ),
+     * 
+    *     @OA\Response(response="200", description="Display a credential User."),
+    *     @OA\Response(response="201", description="Successful operation"),
+    *     @OA\Response(response="400", description="Bad Request"),
+    *     @OA\Response(response="401", description="Unauthenticated"),
+    *     @OA\Response(response="403", description="Forbidden")
+    * )
+    */
     public function login(Request $request)
     {
         $credentials = $request->only(['email', 'password']);

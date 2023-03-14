@@ -15,31 +15,31 @@
                 "tags": [
                     "Auth"
                 ],
-                "summary": "Autenticação de usuário",
-                "description": "Returns project data",
-                "operationId": "storeLogin",
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "properties": {
-                                    "email": {
-                                        "type": "string"
-                                    },
-                                    "password": {
-                                        "type": "string"
-                                    }
-                                },
-                                "type": "object",
-                                "example": {
-                                    "email": "admin@admin.com",
-                                    "password": "@Banco13032023"
-                                }
-                            }
+                "operationId": "2dd578ff7aba2721293dac66833b27d1",
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "Email Field",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "description": "Password",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
                         }
                     }
-                },
+                ],
                 "responses": {
+                    "200": {
+                        "description": "Display a credential User."
+                    },
                     "201": {
                         "description": "Successful operation"
                     },

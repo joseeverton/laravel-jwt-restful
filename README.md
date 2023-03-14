@@ -4,7 +4,9 @@
 2. Gerar migrations
     > php artisan migrate
 3. Rodar seeder para gerar o usuário admin
-     - Os dados de acesso encontra-se em: database/seeders/UserSeeder.php
+
     > php artisan db:seed
+    
+    Os dados de acesso encontra-se em: database/seeders/UserSeeder.php
 4. Rodar o servidor local
     >php artisan serve
